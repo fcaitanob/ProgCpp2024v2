@@ -9,6 +9,8 @@ string STR2 = "cccc";
 
 void dspVar();
 void ingVar(int);
+int  largoStr(string);
+void pruebaTodo();
 
 int main()
 {
@@ -18,6 +20,7 @@ int main()
         cout << "Menu principal\n";
         cout << "1. Despliego variables globales\n";
         cout << "2. Modifico STR1\n";
+        cout << "99. Prueba de todas las funciones\n";
         cout << "0. Fin\n";
         cin >> opc;
 
@@ -27,6 +30,9 @@ int main()
             break;
         case 2:
             ingVar(1);
+            break;
+        case 99:
+            pruebaTodo();
             break;
         case 0:
             cout << "Fin del programa\n";
@@ -43,7 +49,9 @@ int main()
 void dspVar() {
     cout << "Despliego variables globales\n";
     cout << "El string uno tiene: " << STR1 << "\n";
+    cout << "  El largo es: " << largoStr(STR1) << "\n";
     cout << "El string dos tiene: " << STR2 << "\n";
+    cout << "  El largo es: " << largoStr(STR2) << "\n";
     // Presiones cualquier tecla para continuar
     //system("pause");
     return;
@@ -67,6 +75,32 @@ void ingVar(int par1) {
     dspVar();
     return;
 };
+
+int largoStr(string p1) {
+
+    int x = 0;
+    while (p1[x] != '\0') {
+        x++;
+    }
+    return x;
+};
+
+void pruebaTodo() {
+    //---------------------------------------
+    cout << "Prueba de largoStr(string)\n";
+    if (largoStr("abcd") == 4
+        && largoStr("") == 0
+    ) {
+        cout << "  OK\n";
+
+    } else {
+        cout << "  Error\n";
+    };
+    return;
+};
+
+
+
 
 
 
